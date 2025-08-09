@@ -80,13 +80,18 @@
     </div>
 
     <!-- Project Modal -->
-    <ProjectModal :project="selectedProject" @close="closeModal" />
+    <ProjectModal :project="selectedProject" @close="closeModal" @open-image-viewer="openImageViewer" />
+
+    <!-- Image Viewer -->
+    <ImageViewer :is-open="isImageViewerOpen" :images="selectedProjectImages" :initial-index="selectedImageIndex"
+      @close="closeImageViewer" />
   </section>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import ProjectModal from '@/components/ProjectModal.vue'
+import ImageViewer from '@/components/ImageViewer.vue'
 
 interface Screenshot {
   image: string
@@ -108,6 +113,11 @@ interface Project {
 
 const selectedProject = ref<Project | null>(null)
 
+// Image Viewer state
+const isImageViewerOpen = ref(false)
+const selectedProjectImages = ref<Screenshot[]>([])
+const selectedImageIndex = ref(0)
+
 const projects: Project[] = [
   {
     id: 1,
@@ -120,6 +130,16 @@ const projects: Project[] = [
         image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop',
         title: 'Página Principal',
         description: 'Diseño moderno y responsivo con catálogo de productos, filtros avanzados y búsqueda inteligente'
+      },
+      {
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
+        title: 'Panel de Administración',
+        description: 'Dashboard completo con analytics en tiempo real, gestión de productos, pedidos y usuarios'
+      },
+      {
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
+        title: 'Panel de Administración',
+        description: 'Dashboard completo con analytics en tiempo real, gestión de productos, pedidos y usuarios'
       },
       {
         image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
@@ -198,6 +218,18 @@ const getTechIcon = (tech: string): string => {
 const openProjectModal = (project: Project) => {
   selectedProject.value = project
   document.body.style.overflow = 'hidden'
+}
+
+const openImageViewer = (images: Screenshot[], index: number = 0) => {
+  selectedProjectImages.value = images
+  selectedImageIndex.value = index
+  isImageViewerOpen.value = true
+}
+
+const closeImageViewer = () => {
+  isImageViewerOpen.value = false
+  selectedProjectImages.value = []
+  selectedImageIndex.value = 0
 }
 
 const closeModal = () => {

@@ -4,16 +4,19 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-12">
         <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-          Tecnologías que <span
-            class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Domino</span>
+          Tecnologías que he
+          <span class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+            utilizado
+          </span>
         </h2>
         <p class="text-xl text-slate-400 max-w-3xl mx-auto">
-          Herramientas y tecnologías que uso para crear soluciones increíbles
+          Herramientas y tecnologías que empleo para desarrollar soluciones innovadoras y de alto impacto.
         </p>
       </div>
-
-      <div class="relative overflow-hidden ">
-        <div class="flex space-x-8 animate-marquee mt-3">
+      <div class="relative overflow-hidden">
+        <div ref="marqueeContainer" class="flex space-x-8 will-change-transform"
+          :style="{ transform: `translateX(${translateX}px)` }">
+          <!-- Primera repetición -->
           <div v-for="tech in technologies" :key="tech.name + '_1'" class="flex-shrink-0 group">
             <div
               class="w-24 h-24 bg-slate-800 hover:bg-slate-700 rounded-2xl flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 border border-slate-700 hover:border-blue-500/50">
@@ -23,16 +26,8 @@
               {{ tech.name }}
             </p>
           </div>
+          <!-- Segunda repetición -->
           <div v-for="tech in technologies" :key="tech.name + '_2'" class="flex-shrink-0 group">
-            <div
-              class="w-24 h-24 bg-slate-800 hover:bg-slate-700 rounded-2xl flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 border border-slate-700 hover:border-blue-500/50">
-              <img :src="tech.icon" :alt="tech.name" class="w-12 h-12 object-contain" />
-            </div>
-            <p class="text-sm text-slate-400 text-center mt-3 group-hover:text-blue-400 transition-colors">
-              {{ tech.name }}
-            </p>
-          </div>
-          <div v-for="tech in technologies" :key="tech.name + '_3'" class="flex-shrink-0 group">
             <div
               class="w-24 h-24 bg-slate-800 hover:bg-slate-700 rounded-2xl flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 border border-slate-700 hover:border-blue-500/50">
               <img :src="tech.icon" :alt="tech.name" class="w-12 h-12 object-contain" />
@@ -48,6 +43,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
+
 interface Technology {
   name: string
   icon: string
@@ -66,21 +63,40 @@ const technologies: Technology[] = [
   { name: 'Tailwind', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png' },
   { name: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' }
 ]
+
+const marqueeContainer = ref<HTMLElement>()
+const translateX = ref(0)
+const speed = 1
+let animationId: number
+
+const animate = () => {
+  translateX.value -= speed
+
+  if (marqueeContainer.value) {
+    const itemWidth = 128
+    const totalWidth = technologies.length * itemWidth
+
+    if (Math.abs(translateX.value) >= totalWidth) {
+      translateX.value = 0
+    }
+  }
+
+  animationId = requestAnimationFrame(animate)
+}
+
+onMounted(() => {
+  animate()
+})
+
+onUnmounted(() => {
+  if (animationId) {
+    cancelAnimationFrame(animationId)
+  }
+})
 </script>
 
 <style scoped>
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-33.333%);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 15s linear infinite;
-  width: calc(300% + 64px);
+.will-change-transform {
+  will-change: transform;
 }
 </style>

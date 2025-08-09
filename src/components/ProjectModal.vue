@@ -1,5 +1,5 @@
 <template>
-  <div v-if="project" class="fixed inset-0 z-50 overflow-y-auto" @click="$emit('close')">
+  <div v-if="props.project" class="fixed inset-0 z-50 overflow-y-auto" @click="$emit('close')">
     <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center">
       <div class="fixed inset-0 bg-slate-950/90 backdrop-blur-xl transition-opacity"></div>
 
@@ -8,8 +8,8 @@
         @click.stop>
         <div class="flex justify-between items-start mb-8">
           <div>
-            <h3 class="text-4xl font-bold text-white mb-2">{{ project.title }}</h3>
-            <p class="text-slate-400 text-lg">{{ project.description }}</p>
+            <h3 class="text-4xl font-bold text-white mb-2">{{ props.project.title }}</h3>
+            <p class="text-slate-400 text-lg">{{ props.project.description }}</p>
           </div>
           <button @click="$emit('close')"
             class="text-slate-400 hover:text-white transition-colors p-2 hover:bg-slate-700 rounded-xl cursor-pointer">
@@ -20,11 +20,30 @@
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 mb-8">
-          <div v-for="(screenshot, index) in project.screenshots" :key="index" class="space-y-4 group">
-            <div class="relative overflow-hidden rounded-2xl">
+          <div v-for="(screenshot, index) in props.project.screenshots" :key="index" class="space-y-4 group">
+            <div class="relative overflow-hidden rounded-2xl cursor-pointer" @click="openImageViewer(index)">
               <img :src="screenshot.image" :alt="screenshot.title"
                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
               <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+
+              <!-- Icono de zoom principal - siempre visible en la esquina superior derecha -->
+              <div class="absolute top-4 right-4 transition-all duration-300 transform">
+                <div class="bg-white/40 backdrop-blur-sm text-black p-3 rounded-lg shadow-lg border border-white/20">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Texto indicativo para móvil -->
+              <div
+                class="absolute bottom-4 left-4 right-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+                <div
+                  class="bg-black/70 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full text-center font-medium">
+                  Toca para expandir
+                </div>
+              </div>
             </div>
             <div>
               <h4 class="text-xl font-bold text-white mb-2">{{ screenshot.title }}</h4>
@@ -36,13 +55,13 @@
         <div class="space-y-6">
           <div>
             <h4 class="text-2xl font-bold text-white mb-4">Descripción Completa</h4>
-            <p class="text-slate-300 text-lg leading-relaxed">{{ project.fullDescription }}</p>
+            <p class="text-slate-300 text-lg leading-relaxed">{{ props.project.fullDescription }}</p>
           </div>
 
           <div>
             <h4 class="text-xl font-bold text-white mb-4">Tecnologías Utilizadas</h4>
             <div class="flex flex-wrap gap-3">
-              <div v-for="tech in project.technologies" :key="tech"
+              <div v-for="tech in props.project.technologies" :key="tech"
                 class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-blue-600/20 text-blue-300 rounded-xl text-sm font-semibold border border-blue-500/30">
                 <img :src="getTechIcon(tech)" :alt="tech" class="w-4 h-4" />
                 <span>{{ tech }}</span>
@@ -51,7 +70,7 @@
           </div>
 
           <div class="flex flex-col sm:flex-row gap-4 pt-6">
-            <a :href="project.github" target="_blank"
+            <a :href="props.project.github" target="_blank"
               class="flex items-center justify-center space-x-3 bg-slate-700 hover:bg-slate-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -59,7 +78,7 @@
               </svg>
               <span>Ver Código</span>
             </a>
-            <a :href="project.demo" target="_blank"
+            <a :href="props.project.demo" target="_blank"
               class="flex items-center justify-center space-x-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -93,13 +112,20 @@ interface Project {
   demo: string
 }
 
-defineProps<{
+const props = defineProps<{
   project: Project | null
 }>()
 
-defineEmits<{
+const emit = defineEmits<{
   close: []
+  'open-image-viewer': [images: Screenshot[], index: number]
 }>()
+
+const openImageViewer = (index: number) => {
+  if (props.project?.screenshots) {
+    emit('open-image-viewer', props.project.screenshots, index)
+  }
+}
 
 const getTechIcon = (tech: string): string => {
   const techIcons: { [key: string]: string } = {
@@ -119,3 +145,4 @@ const getTechIcon = (tech: string): string => {
   return techIcons[tech] || 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
 }
 </script>
+
