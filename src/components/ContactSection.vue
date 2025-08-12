@@ -142,7 +142,7 @@
                       d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
                   <p class="text-red-300 text-sm font-semibold">
-                    Por favor corrige los errores antes de enviar
+                    Por favor completa todos los campos antes de enviar
                   </p>
                 </div>
               </div>
@@ -196,7 +196,7 @@
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
-                    <span class="font-semibold">Corrige los errores</span>
+                    <span class="font-semibold">Completa el formulario</span>
                   </span>
 
                   <span v-else class="flex items-center space-x-3">

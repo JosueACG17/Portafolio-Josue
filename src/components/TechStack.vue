@@ -14,7 +14,7 @@
         </p>
       </div>
       <div class="relative overflow-hidden">
-        <div ref="marqueeContainer" class="flex space-x-8 will-change-transform"
+        <div ref="marqueeContainer" class="flex space-x-8 will-change-transform mt-3"
           :style="{ transform: `translateX(${translateX}px)` }">
           <!-- Primera repetición -->
           <div v-for="tech in technologies" :key="tech.name + '_1'" class="flex-shrink-0 group">
