@@ -11,22 +11,22 @@
         <!-- Desktop Menu -->
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-8">
-            <a href="#inicio" @click="scrollTo('inicio')"
-              class="text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-blue-500/10">
+            <button @click="scrollTo('inicio')"
+              class="cursor-pointer text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-blue-500/10">
               Inicio
-            </a>
-            <a href="#sobre-mi" @click="scrollTo('sobre-mi')"
-              class="text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-blue-500/10">
+            </button>
+            <button  @click="scrollTo('sobre-mi')"
+              class="cursor-pointer text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-blue-500/10">
               Sobre Mí
-            </a>
-            <a href="#proyectos" @click="scrollTo('proyectos')"
-              class="text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-blue-500/10">
+            </button>
+            <button @click="scrollTo('proyectos')"
+              class="cursor-pointer text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-blue-500/10">
               Proyectos
-            </a>
-            <a href="#contacto" @click="scrollTo('contacto')"
-              class="text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-blue-500/10">
+            </button>
+            <button @click="scrollTo('contacto')"
+              class="cursor-pointer text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-blue-500/10">
               Contacto
-            </a>
+            </button>
           </div>
         </div>
 
@@ -42,22 +42,22 @@
     <!-- Mobile menu -->
     <div v-if="mobileMenuOpen" class="md:hidden bg-slate-900/95 backdrop-blur-xl border-t border-blue-500/20">
       <div class="px-2 pt-2 pb-3 space-y-1">
-        <a href="#inicio" @click="scrollTo('inicio')"
+        <button @click="scrollTo('inicio')"
           class="text-slate-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:bg-blue-500/10">
           Inicio
-        </a>
-        <a href="#sobre-mi" @click="scrollTo('sobre-mi')"
+        </button>
+        <button @click="scrollTo('sobre-mi')"
           class="text-slate-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:bg-blue-500/10">
           Sobre Mí
-        </a>
-        <a href="#proyectos" @click="scrollTo('proyectos')"
+        </button>
+        <button @click="scrollTo('proyectos')"
           class="text-slate-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:bg-blue-500/10">
           Proyectos
-        </a>
-        <a href="#contacto" @click="scrollTo('contacto')"
+        </button>
+        <button @click="scrollTo('contacto')"
           class="text-slate-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:bg-blue-500/10">
           Contacto
-        </a>
+        </button>
       </div>
     </div>
   </nav>
@@ -79,4 +79,5 @@ const scrollTo = (elementId: string) => {
   }
   mobileMenuOpen.value = false
 }
+
 </script>

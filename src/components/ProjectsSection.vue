@@ -13,9 +13,9 @@
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div v-for="project in projects" :key="project.id" @click="openProjectModal(project)"
-          class="group cursor-pointer">
+          class="group cursor-pointer h-full">
           <div
-            class="bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-700 hover:border-blue-500/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10">
+            class="bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-700 hover:border-blue-500/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10 h-full flex flex-col">
             <div class="relative overflow-hidden">
               <img :src="project.image" :alt="project.title"
                 class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110">
@@ -33,11 +33,11 @@
               </div>
             </div>
 
-            <div class="p-6">
+            <div class="p-6 flex flex-col flex-grow">
               <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
                 {{ project.title }}
               </h3>
-              <p class="text-slate-400 mb-4 leading-relaxed">{{ project.description }}</p>
+              <p class="text-slate-400 mb-4 leading-relaxed flex-grow line-clamp-3">{{ project.description }}</p>
 
               <!-- Tecnologías con iconos -->
               <div class="flex flex-wrap gap-3 mb-6">
@@ -52,7 +52,7 @@
                 </span>
               </div>
 
-              <div class="flex justify-between items-center">
+              <div class="flex justify-between items-center mt-auto">
                 <span class="text-blue-400 font-semibold group-hover:text-blue-300 transition-colors">
                   Ver detalles →
                 </span>
