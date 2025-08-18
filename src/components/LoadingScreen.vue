@@ -52,12 +52,6 @@
           :style="{ animationDelay: (i * 0.15) + 's' }"></div>
       </div>
     </div>
-
-    <!-- Mensaje aleatorio de carga -->
-    <div class="absolute bottom-10 left-0 right-0 text-center text-blue-300 text-xs font-mono tracking-widest slide-in-up" style="animation-delay: 1.1s">
-      {{ loadingMessages[currentMessage] }}
-    </div>
-
     <!-- Transición de salida con efecto de desvanecimiento estelar -->
     <div v-if="isHiding" class="absolute inset-0 bg-slate-950 z-20 transition-all duration-1000 ease-out fade-out"></div>
   </div>
@@ -73,22 +67,8 @@ const emit = defineEmits<{
 const isLoading = ref(true)
 const isHiding = ref(false)
 const progress = ref(0)
-const currentMessage = ref(0)
-
-const loadingMessages = [
-  "CARGANDO PORTAFOLIO...",
-  "INICIALIZANDO COMPONENTES...",
-  "OPTIMIZANDO EXPERIENCIA...",
-  "PREPARANDO PROYECTOS...",
-  "LISTO PARA MOSTRAR..."
-]
 
 onMounted(async () => {
-  // Cambiar mensajes durante la carga
-  const messageInterval = setInterval(() => {
-    currentMessage.value = (currentMessage.value + 1) % loadingMessages.length
-  }, 2000)
-
   // Progreso de carga con aceleración
   const progressInterval = setInterval(() => {
     const increment = progress.value < 30 ? 15 :
@@ -98,10 +78,7 @@ onMounted(async () => {
 
     if (progress.value >= 100) {
       clearInterval(progressInterval)
-      clearInterval(messageInterval)
       progress.value = 100
-      currentMessage.value = loadingMessages.length - 1
-
       setTimeout(() => {
         hideLoading()
       }, 500)
