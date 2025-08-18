@@ -108,8 +108,8 @@ const currentText = ref('')
 
 // Typewriter effect
 const phrases = [
-  'Desarrollador Frontend ',
   'Desarrollador Mobile ',
+  'Desarrollador Frontend ',
   'Desarrollador UI/UX ',
   'Solucionador de Problemas ',
   'Apasionado por la Tecnología ',
