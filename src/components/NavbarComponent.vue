@@ -12,19 +12,19 @@
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-8">
             <button @click="scrollTo('inicio')"
-              class="cursor-pointer text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-blue-500/10">
+              class="cursor-pointer text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:bg-blue-500/10">
               Inicio
             </button>
             <button  @click="scrollTo('sobre-mi')"
-              class="cursor-pointer text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-blue-500/10">
+              class="cursor-pointer text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:bg-blue-500/10">
               Sobre Mí
             </button>
             <button @click="scrollTo('proyectos')"
-              class="cursor-pointer text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-blue-500/10">
+              class="cursor-pointer text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:bg-blue-500/10">
               Proyectos
             </button>
             <button @click="scrollTo('contacto')"
-              class="cursor-pointer text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-blue-500/10">
+              class="cursor-pointer text-slate-300 hover:text-blue-400 px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:bg-blue-500/10">
               Contacto
             </button>
           </div>

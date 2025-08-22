@@ -4,8 +4,8 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-12">
         <h2 class="text-5xl font-bold text-white mb-6">
-          ¡Trabajemos <span
-            class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Juntos!</span>
+          ¡Contruyamos tu <span
+            class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Proyecto!</span>
         </h2>
         <p class="text-xl text-slate-300 max-w-2xl mx-auto">
           ¿Tienes una idea increíble? Me encantaría ayudarte a hacerla realidad
