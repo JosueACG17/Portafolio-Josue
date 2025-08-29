@@ -12,9 +12,9 @@
           <div class="space-y-6">
             <div class="inline-block">
               <span
-        class="inline-flex items-center bg-blue-600/20 text-blue-300 text-sm font-semibold px-4 py-2 rounded-full border border-blue-400/30 shadow-[0_0_20px_rgba(59,130,246,0.6)]">
-        Disponible para proyectos
-      </span>
+                class="inline-flex items-center bg-blue-600/20 text-blue-300 text-sm font-semibold px-4 py-2 rounded-full border border-blue-400/30 shadow-[0_0_20px_rgba(59,130,246,0.6)]">
+                Disponible para proyectos
+              </span>
             </div>
             <h1 class="text-3xl md:text-5xl font-black leading-tight">
               <span class="text-white">Hola, soy Josue Chan</span>
@@ -44,13 +44,12 @@
               class="cursor-pointer border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-6 py-3 rounded-xl font-semibold text-base transition-all duration-300 transform hover:scale-105">
               Contactame
             </button>
-            <a
-              href="/public/CV_JosueChan.pdf"
-              download
-              class="cursor-pointer border-2 border-green-500 text-green-400 hover:bg-green-500 hover:text-white px-6 py-3 rounded-xl font-semibold text-base transition-all duration-300 transform hover:scale-105 text-center flex items-center justify-center gap-2"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 16v-8m0 8l-4-4m4 4l4-4m-8 8h8a2 2 0 002-2V6a2 2 0 00-2-2H8a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            <a href="/CV_JosueCG.pdf" download
+              class="cursor-pointer border-2 border-green-500 text-green-400 hover:bg-green-500 hover:text-white px-6 py-3 rounded-xl font-semibold text-base transition-all duration-300 transform hover:scale-105 text-center flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 16v-8m0 8l-4-4m4 4l4-4m-8 8h8a2 2 0 002-2V6a2 2 0 00-2-2H8a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
               Descargar CV
             </a>
