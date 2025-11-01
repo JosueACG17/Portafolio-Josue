@@ -44,7 +44,7 @@
               class="cursor-pointer border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-6 py-3 rounded-xl font-semibold text-base transition-all duration-300 transform hover:scale-105">
               Contactame
             </button>
-            <a href="/CV_JosueCG.pdf" download
+            <a href="/CV_JosueChan.pdf" download
               class="cursor-pointer border-2 border-green-500 text-green-400 hover:bg-green-500 hover:text-white px-6 py-3 rounded-xl font-semibold text-base transition-all duration-300 transform hover:scale-105 text-center flex items-center justify-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-5 h-5">
