@@ -68,12 +68,6 @@
           <p v-if="currentDescription" class="text-sm text-gray-300">{{ currentDescription }}</p>
         </div>
       </div>
-
-      <!-- Instrucciones -->
-      <div class="absolute top-4 left-4 text-white/70 text-sm">
-        <p class="mb-1">ESC para cerrar</p>
-        <p v-if="images && images.length > 1">← → para navegar</p>
-      </div>
     </div>
   </Teleport>
 </template>

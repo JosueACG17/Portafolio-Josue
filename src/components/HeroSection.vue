@@ -114,11 +114,9 @@ import { ref, onMounted } from 'vue'
 
 const currentText = ref('')
 
-// Typewriter effect
 const phrases = [
-  'Desarrollador Mobile ',
+  'Desarrollador Mobile',
   'Desarrollador Frontend ',
-  'Desarrollador UI/UX ',
   'Solucionador de Problemas ',
   'Apasionado por la Tecnología ',
 ]

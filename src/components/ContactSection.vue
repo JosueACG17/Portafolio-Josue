@@ -163,7 +163,7 @@
                 </p>
               </div>
 
-              <button type="submit" :disabled="isSubmitting || !canSubmitForm || !isFormValid"
+              <button type="submit"
                 class="cursor-pointer relative overflow-hidden group w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 disabled:from-slate-600 disabled:to-slate-700 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/30 disabled:transform-none disabled:shadow-none disabled:cursor-not-allowed border border-blue-400/20 hover:border-blue-300/40 disabled:border-slate-600">
                 <!-- Efecto de brillo animado -->
                 <div
@@ -181,24 +181,6 @@
                     </svg>
                     <span class="font-semibold">Enviando mensaje...</span>
                   </span>
-
-                  <span v-else-if="!canSubmitForm" class="flex items-center space-x-3">
-                    <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
-                      </path>
-                    </svg>
-                    <span class="font-semibold">Formulario Bloqueado</span>
-                  </span>
-
-                  <span v-else-if="!isFormValid && meta.dirty" class="flex items-center space-x-3">
-                    <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <span class="font-semibold">Completa el formulario</span>
-                  </span>
-
                   <span v-else class="flex items-center space-x-3">
                     <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none"
                       stroke="currentColor" viewBox="0 0 24 24">
@@ -253,11 +235,6 @@ const [name, nameAttrs] = defineField('name')
 const [email, emailAttrs] = defineField('email')
 const [subject, subjectAttrs] = defineField('subject')
 const [message, messageAttrs] = defineField('message')
-
-// Computed properties
-const isFormValid = computed(() => {
-  return meta.value.valid && meta.value.dirty
-})
 
 const messageLength = computed(() => {
   return message.value?.length || 0

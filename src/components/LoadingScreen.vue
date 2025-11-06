@@ -69,7 +69,6 @@ const isHiding = ref(false)
 const progress = ref(0)
 
 onMounted(async () => {
-  // Progreso de carga con aceleración
   const progressInterval = setInterval(() => {
     const increment = progress.value < 30 ? 15 :
                      progress.value < 70 ? 8 :
