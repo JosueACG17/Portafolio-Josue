@@ -1,10 +1,10 @@
 <template>
   <section id="proyectos" class="py-20 bg-slate-900/30 relative">
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent"></div>
+    <div class="absolute inset-0 bg-linear-to-b from-transparent via-blue-900/5 to-transparent"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-16">
         <h2 class="text-5xl font-bold text-white mb-6">
-          Mis <span class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Proyectos</span>
+          Mis <span class="bg-linear-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Proyectos</span>
         </h2>
         <p class="text-xl text-slate-400 max-w-3xl mx-auto">
           Una colección de proyectos que muestran mi pasión por crear soluciones innovadoras
@@ -20,7 +20,7 @@
               <img :src="project.image" :alt="project.title"
                 class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110">
               <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                class="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               </div>
               <div
                 class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
@@ -33,11 +33,11 @@
               </div>
             </div>
 
-            <div class="p-6 flex flex-col flex-grow">
+            <div class="p-6 flex flex-col grow">
               <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
                 {{ project.title }}
               </h3>
-              <p class="text-slate-400 mb-4 leading-relaxed flex-grow line-clamp-3">{{ project.description }}</p>
+              <p class="text-slate-400 mb-4 leading-relaxed grow line-clamp-3">{{ project.description }}</p>
 
               <!-- Tecnologías con iconos -->
               <div class="flex flex-wrap gap-3 mb-6">

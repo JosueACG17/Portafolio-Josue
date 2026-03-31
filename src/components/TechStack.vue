@@ -1,11 +1,11 @@
 <template>
   <section class="py-20 bg-slate-900/50 relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-blue-600/5"></div>
+    <div class="absolute inset-0 bg-linear-to-r from-blue-500/5 to-blue-600/5"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-12">
         <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
           Tecnologías que he
-          <span class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+          <span class="bg-linear-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
             utilizado
           </span>
         </h2>
@@ -17,7 +17,7 @@
         <div ref="marqueeContainer" class="flex space-x-8 will-change-transform mt-3"
           :style="{ transform: `translateX(${translateX}px)` }">
           <!-- Primera repetición -->
-          <div v-for="tech in technologies" :key="tech.name + '_1'" class="flex-shrink-0 group">
+          <div v-for="tech in technologies" :key="tech.name + '_1'" class="shrink-0 group">
             <div
               class="w-24 h-24 bg-slate-800 hover:bg-slate-700 rounded-2xl flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 border border-slate-700 hover:border-blue-500/50">
               <img :src="tech.icon" :alt="tech.name" class="w-12 h-12 object-contain" />
@@ -27,7 +27,7 @@
             </p>
           </div>
           <!-- Segunda repetición -->
-          <div v-for="tech in technologies" :key="tech.name + '_2'" class="flex-shrink-0 group">
+          <div v-for="tech in technologies" :key="tech.name + '_2'" class="shrink-0 group">
             <div
               class="w-24 h-24 bg-slate-800 hover:bg-slate-700 rounded-2xl flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 border border-slate-700 hover:border-blue-500/50">
               <img :src="tech.icon" :alt="tech.name" class="w-12 h-12 object-contain" />
@@ -57,7 +57,7 @@ const technologies: Technology[] = [
   { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
   { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
   { name: 'Vue.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
-  { name: 'Tailwind', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png' },
+  { name: 'Tailwind', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/330px-Tailwind_CSS_Logo.svg.png' },
   { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
   { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
   { name: 'Laravel', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png' },
@@ -68,11 +68,13 @@ const technologies: Technology[] = [
   { name: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
   { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
   { name: 'Postman', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg' },
+  { name: 'SQL Server', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Microsoft_SQL_Server_2025_icon.svg/960px-Microsoft_SQL_Server_2025_icon.svg.png' },
+  {name: '.NET', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Microsoft_.NET_logo.svg/500px-Microsoft_.NET_logo.svg.png' },
 ]
 
 const marqueeContainer = ref<HTMLElement>()
 const translateX = ref(0)
-const speed = 1
+const speed = 2
 let animationId: number
 
 const animate = () => {

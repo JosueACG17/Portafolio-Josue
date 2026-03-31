@@ -24,7 +24,7 @@
             <div class="relative overflow-hidden rounded-2xl cursor-pointer" @click="openImageViewer(index)">
               <img :src="screenshot.image" :alt="screenshot.title"
                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+              <div class="absolute inset-0 bg-linear-to-t from-slate-900/60 to-transparent"></div>
 
               <!-- Icono de zoom principal - siempre visible en la esquina superior derecha -->
               <div class="absolute top-4 right-4 transition-all duration-300 transform">
@@ -62,7 +62,7 @@
             <h4 class="text-xl font-bold text-white mb-4">Tecnologías Utilizadas</h4>
             <div class="flex flex-wrap gap-3">
               <div v-for="tech in props.project.technologies" :key="tech"
-                class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-blue-600/20 text-blue-300 rounded-xl text-sm font-semibold border border-blue-500/30">
+                class="flex items-center space-x-2 px-4 py-2 bg-linear-to-r from-blue-500/20 to-blue-600/20 text-blue-300 rounded-xl text-sm font-semibold border border-blue-500/30">
                 <img :src="getTechIcon(tech)" :alt="tech" class="w-4 h-4" />
                 <span>{{ tech }}</span>
               </div>
@@ -79,7 +79,7 @@
               <span>Ver Código</span>
             </a>
             <a :href="props.project.demo" target="_blank"
-              class="flex items-center justify-center space-x-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
+              class="flex items-center justify-center space-x-3 bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />

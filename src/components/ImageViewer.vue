@@ -1,7 +1,7 @@
 <template>
   <Teleport to="body">
     <div v-if="isOpen"
-         class="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
+         class="fixed inset-0 z-9999 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
          @click="closeViewer"
          @keydown.esc="closeViewer">
 

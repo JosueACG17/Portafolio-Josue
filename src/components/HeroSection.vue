@@ -1,7 +1,7 @@
 <template>
   <section id="inicio" class="pt-16 min-h-screen flex items-center relative overflow-hidden">
     <!-- Background Effects -->
-    <div class="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-blue-800/20 to-slate-900"></div>
+    <div class="absolute inset-0 bg-linear-to-r from-blue-900/30 via-blue-800/20 to-slate-900"></div>
     <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
     <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000">
     </div>
@@ -19,7 +19,7 @@
             <h1 class="text-3xl md:text-5xl font-black leading-tight">
               <span class="text-white">Hola, soy Josue Chan</span>
               <br>
-              <span class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+              <span class="bg-linear-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
                 Desarrollador de Software
               </span>
             </h1>
@@ -37,7 +37,7 @@
 
           <div class="flex flex-col sm:flex-row gap-4">
             <button @click="scrollTo('proyectos')"
-              class="cursor-pointer bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 py-3 rounded-xl font-semibold text-base transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25">
+              class="cursor-pointer bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 py-3 rounded-xl font-semibold text-base transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25">
               Ver Mis Proyectos
             </button>
             <button @click="scrollTo('contacto')"
@@ -61,7 +61,7 @@
           <div class="relative">
             <!-- Círculo de fondo con gradiente -->
             <div
-              class="absolute inset-0 w-80 h-80 md:w-96 md:h-96 bg-gradient-to-br from-blue-500 via-blue-400 to-blue-400 rounded-full opacity-90 blur-sm">
+              class="absolute inset-0 w-80 h-80 md:w-96 md:h-96 bg-linear-to-r from-blue-500 via-blue-400 to-blue-400 rounded-full opacity-90 blur-sm">
             </div>
 
             <!-- Imagen principal -->
@@ -97,10 +97,10 @@
 
             <!-- Líneas decorativas -->
             <div
-              class="absolute -top-8 left-1/2 transform -translate-x-1/2 w-20 h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent">
+              class="absolute -top-8 left-1/2 transform -translate-x-1/2 w-20 h-0.5 bg-linear-to-r from-transparent via-blue-400 to-transparent">
             </div>
             <div
-              class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-32 h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent">
+              class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-32 h-0.5 bg-linear-to-r from-transparent via-blue-400 to-transparent">
             </div>
           </div>
         </div>

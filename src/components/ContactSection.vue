@@ -1,11 +1,11 @@
 <template>
   <section id="contacto" class="py-20 relative">
-    <div class="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-blue-800/10"></div>
+    <div class="absolute inset-0 bg-linear-to-br from-blue-900/10 to-blue-800/10"></div>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-12">
         <h2 class="text-5xl font-bold text-white mb-6">
           ¡Contruyamos tu <span
-            class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Proyecto!</span>
+            class="bg-linear-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Proyecto!</span>
         </h2>
         <p class="text-xl text-slate-300 max-w-2xl mx-auto">
           ¿Tienes una idea increíble? Me encantaría ayudarte a hacerla realidad
@@ -18,7 +18,7 @@
           <div class="space-y-6">
             <!-- Animación de éxito -->
             <div
-              class="mx-auto w-24 h-24 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center animate-pulse">
+              class="mx-auto w-24 h-24 bg-linear-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center animate-pulse">
               <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
               </svg>
@@ -164,10 +164,10 @@
               </div>
 
               <button type="submit"
-                class="cursor-pointer relative overflow-hidden group w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 disabled:from-slate-600 disabled:to-slate-700 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/30 disabled:transform-none disabled:shadow-none disabled:cursor-not-allowed border border-blue-400/20 hover:border-blue-300/40 disabled:border-slate-600">
+                class="cursor-pointer relative overflow-hidden group w-full sm:w-auto bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 disabled:from-slate-600 disabled:to-slate-700 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/30 disabled:transform-none disabled:shadow-none disabled:cursor-not-allowed border border-blue-400/20 hover:border-blue-300/40 disabled:border-slate-600">
                 <!-- Efecto de brillo animado -->
                 <div
-                  class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out">
+                  class="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out">
                 </div>
                 <!-- Contenido del botón -->
                 <div class="relative flex items-center justify-center space-x-3 ">

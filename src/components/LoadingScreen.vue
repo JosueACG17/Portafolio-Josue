@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isLoading" class="fixed inset-0 z-[9999] flex items-center justify-center bg-slate-950 overflow-hidden">
+  <div v-if="isLoading" class="fixed inset-0 z-9999 flex items-center justify-center bg-slate-950 overflow-hidden">
     <!-- Fondo con efecto de constelación -->
     <div class="absolute inset-0 overflow-hidden">
       <div class="stars"></div>
@@ -38,7 +38,7 @@
       <!-- Barra de progreso futurista -->
       <div class="w-72 mx-auto mb-6 slide-in-up" style="animation-delay: 0.7s">
         <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden relative">
-          <div class="h-full bg-gradient-to-r from-blue-400 to-white rounded-full transition-all duration-700 ease-out"
+          <div class="h-full bg-linear-to-r from-blue-400 to-white rounded-full transition-all duration-700 ease-out"
             :style="{ width: progress + '%' }">
             <div class="absolute right-0 top-0 h-full w-1 bg-white shimmer-effect"></div>
           </div>
